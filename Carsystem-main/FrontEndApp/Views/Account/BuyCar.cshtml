@@ -1,0 +1,71 @@
+﻿@model IEnumerable<FrontEndApp.Models.Car>
+
+@{
+    ViewBag.Title = "BuyCar";
+}
+ 
+@Html.Partial("_UserViewPartial")
+
+<h2 class="text-center">Buy Car</h2>
+<div class="jumbotron " style="margin:20px;">
+    <h2 class="text-center">Available Car</h2>
+
+    <div class="container">
+        <table class="table table-responsive table-hover">
+            <tr>
+                <th>Car No</th>
+                <th>Car Image</th>
+                <th>Car Name</th>
+                <th>Car Model</th>
+                <th>Car Year</th>
+                <th>Car Type</th>
+                <th>Car Owners</th>
+                <th>City</th>
+                <th>Appoinment</th>
+
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.CarNo</td>
+
+                    <td><img src="@Html.DisplayFor(modelitem=>item.CarImage)" style="width: 100px; height:100px" /></td>
+                    <td>@item.CarName</td>
+                    <td>@item.CarModel</td>
+
+                    <td>@item.CarYear</td>
+                    <td>@item.CarType</td>
+                    <td>@item.NoOfOwners</td>
+                    <td>@item.City</td>
+
+
+
+
+                    <td>
+
+                        @Html.ActionLink("Book Appoinment", "Book", new { id = item.CarNo }, new { @class = "btn btn-danger" })
+                    </td>
+
+
+                </tr>
+
+            }
+
+
+        </table>
+
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        function Details(id) {
+            $.get("@Url.Action("ShowpopUp","Owner")/" + id,
+                function (data) {
+                    $('.modal-body').html(data);
+                });
+
+                $("#myModal").modal("show");
+        }
+    </script>
+    }

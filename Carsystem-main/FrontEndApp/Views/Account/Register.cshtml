@@ -1,0 +1,190 @@
+﻿@model FrontEndApp.Models.User
+@{
+    ViewBag.Title = "Register";
+}
+
+<h1 class="display-3 text-center m-4"> Register Here</h1>
+
+
+<div class="row w-100" style="margin-left:10px;padding:10px;">
+
+    <div class="col p-0" style="background-color: #e1faf7">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 ">
+
+                </div>
+                <div class="col-md-4">
+
+
+                    <div class="form-group-sm">
+                        <form action="Register" method="post">
+
+                            <div>
+                                <label>User Name:</label>
+                            </div>
+                            <div>
+                                <input type="text" name="UserName" placeholder="First Name" required class="form-control" />
+                            </div>
+
+                            <div>
+                                <label>Email:</label>
+                            </div>
+                            <div>
+                                <input type="email" name="UserEmail" placeholder="Email" required class="form-control" />
+                            </div>
+                            <div>
+                                <label>Contact No:</label>
+                            </div>
+                            <div>
+                                <input type="text" name="UserContact" placeholder="Contact No" required class="form-control " />
+                            </div>
+                            <div>
+                                <label>City:</label>
+                            </div>
+                            <div>
+                                <input type="text" name="UserCity" placeholder="City" required class="form-control " />
+                            </div>
+
+                            <div>
+                                <label>Password:</label>
+                            </div>
+                            <div>
+                                <input type="password" name="UserPassword" placeholder="Password" required class="form-control " />
+                            </div>
+                            <div>
+                                <label>Confirm Password:</label>
+                            </div>
+                            <div>
+                                <input type="password" name="UserConfirmPassword" placeholder="Confirm Password" required class="form-control " />
+                            </div>
+                            &nbsp;
+                            <div>
+
+                                <div>
+                                    <div>
+                                        <input type="submit" value="Register" class=" form-control btn-success" />
+
+
+                                    </div>
+                                    &nbsp;
+                                    <div>
+                                        <input type="reset" value="Reset" name="Reset" class=" form-control btn-primary" />
+
+                                        &nbsp;
+                                    </div>
+                                    <div>
+                                        <label class="text-danger">@ViewBag.Notification</label>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            @TempData["UserEx"]
+
+                        </form>
+                    </div>
+
+
+                </div>
+               
+            </div>
+        </div>
+
+    </div>
+    <div class="col bg-light" >
+
+        <div class="">
+
+            <h1 class="display-4 mt-5"> Trust Makes Perfect Relation </h1>
+            <p class="lead text-justify">
+                <img src="~/Images/carloginimg.jpg" />
+
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+@*<div class="container">
+    <div class="row">
+        <div class="col-md-4 ">
+
+        </div>
+        <div class="col-md-4">
+
+
+            <div class="form-group-sm">
+                <form action="Register" method="post">
+                    <div>
+                        <label>User Name</label>
+                    </div>
+                    <div>
+                        <input type="text" name="UserName" placeholder="First Name" required class="form-control" />
+                    </div>
+
+                    <div>
+                        <label>Email</label>
+                    </div>
+                    <div>
+                        <input type="email" name="UserEmail" placeholder="Email" required class="form-control" />
+                    </div>
+                    <div>
+                        <label>Contact No</label>
+                    </div>
+                    <div>
+                        <input type="text" name="UserContact" placeholder="Contact No" required class="form-control " />
+                    </div>
+                    <div>
+                        <label>City</label>
+                    </div>
+                    <div>
+                        <input type="text" name="UserCity" placeholder="City" required class="form-control " />
+                    </div>
+
+                    <div>
+                        <label>Password</label>
+                    </div>
+                    <div>
+                        <input type="password" name="UserPassword" placeholder="Password" required class="form-control " />
+                    </div>
+                    <div>
+                        <label>Confirm Password</label>
+                    </div>
+                    <div>
+                        <input type="password" name="UserConfirmPassword" placeholder="Confirm Password" required class="form-control " />
+                    </div>
+                    <div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <input type="submit" value="Register" class=" form-control btn-success" />
+
+                            </div>
+                            <div class="col-md-4">
+                                <input type="reset" value="Reset" name="Reset" class=" form-control btn-default" />
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    @TempData["UserEx"]
+
+                </form>
+            </div>
+
+
+        </div>
+        <div class="col-md-4 ">
+
+        </div>
+    </div>
+</div>*@
+
+

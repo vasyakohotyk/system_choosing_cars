@@ -1,0 +1,72 @@
+﻿@model List<CarSystemProjectAdmin.Models.UserData>
+@{
+    ViewBag.Title = "AdminPanel";
+}
+<br />
+@Html.Partial("_AdminPartial")
+<div class="col-sm-offset-5">
+    <h3 >User Data</h3>
+</div>
+<div class="col-sm-offset-4">
+    @using (Html.BeginForm("AdminPanel", "Home", FormMethod.Get))
+            {
+                <table>
+                    <tr>
+                        <td>
+                            <span><b>Search By:</b></span>
+                            @Html.RadioButton("SearchBy", "Username", true)
+                            <text>Username</text>
+                            @Html.RadioButton("SearchBy", "UserId")
+                            <text>User Id</text>
+                            @Html.RadioButton("SearchBy", "City")
+                            <text>User City</text>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>@Html.TextBox("SearchValue", null, new { @class = "form-control", placeholder = "Enter User Data" })</td>
+                        <td> &nbsp;</td>
+                        <td><input type="submit" value="Search" class="btn btn-success" /></td>
+                    </tr>
+
+                </table>
+            }
+</div>
+<br/>
+<div class="container">
+    <table class="table table-responsive table-hover">
+        <tr>
+            <th>User Id</th>
+            <th>User Name</th>
+            <th>User Email</th>
+            <th>User Contact</th>
+            <th>User City</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.UserId</td>
+                    <td>@item.Username</td>
+                    <td>@item.Email</td>
+                    <td>@item.Contact</td>
+                    <td>@item.City</td>
+                    <td>
+
+                        @Html.ActionLink("Edit", "UserEdit", new { id = item.UserId }, new { @class = "btn btn-primary btn-back" })
+
+                    </td>
+                    <td>
+                        @Html.ActionLink("Delete", "UserDelete", new { id = item.UserId }, new { @class = "btn btn-danger btn-back" })
+
+                    </td>
+
+                </tr>
+            }
+
+    </table>
+</div>
+
+
+

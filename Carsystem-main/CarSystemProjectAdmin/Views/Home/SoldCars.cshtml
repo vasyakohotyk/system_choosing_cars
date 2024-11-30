@@ -1,0 +1,68 @@
+﻿@model List<CarSystemProjectAdmin.Models.Car>
+
+@{
+    ViewBag.Title = "SoldCars";
+}
+<br />
+@Html.Partial("_AdminPartial")
+
+<div class="col-sm-offset-5">
+    <h3>Sold Cars</h3>
+</div>
+<div class="col-sm-offset-4">
+    @using (Html.BeginForm("AdminPanel", "Home", FormMethod.Get))
+    {
+        <table>
+            <tr>
+                <td>@Html.TextBox("SearchValue", null, new { @class = "form-control", placeholder = "Enter User Data" })</td>
+                <td> &nbsp;</td>
+                <td><input type="submit" value="Search" class="btn btn-success" /></td>
+            </tr>
+
+        </table>
+    }
+</div>
+<br />
+<div class="container">
+    <table class="table table-responsive table-hover">
+        <tr>
+            <th>Car No</th>
+            <th>Car Image</th>
+            <th>Car Name</th>
+            <th>Car Model</th>
+            <th>Car Year</th>
+            <th>Car Type</th>
+            <th>Car Owners</th>
+            <th>User ID</th>
+            <th>Sold</th>
+
+
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CarNo</td>
+                
+                <td><img src="@Html.DisplayFor(modelitem=>item.CarImage)" style="width: 100px; height:100px" /></td>
+                
+                <td>@item.CarName</td>
+                <td>@item.CarModel</td>
+
+                <td>@item.CarYear</td>
+                <td>@item.CarType</td>
+                <td>@item.NoOfOwners</td>
+                <td>@item.CarUid</td>
+                <td>
+                    @Html.ActionLink("Sold", "SoldCar", new { id = item.CarNo }, new { @class = "btn btn-success btn-back" })
+
+                </td>
+
+
+
+            </tr>
+        }
+
+    </table>
+</div>
+
+
